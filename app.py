@@ -1,48 +1,18 @@
-# -*- coding: utf-8 -*-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
+import plotly.graph_objs as go
+import plotly.plotly as py
 
-# pandas om de CSV data te laden en te visualiseren
-import pandas as pd 
+app = dash.Dash()
 
-# colors = {
-#     'background': '#111111',
-#     'text': '#7FDBFF'
-# }
+df = pd.read_csv(
+    'https://gist.githubusercontent.com/chriddyp/' +
+    '5d1ea79569ed194d432e56108a04d188/raw/' +
+    'a9f9e8076b837d541398e999dcbac2b2826a81f8/'+
+    'gdp-life-exp-2007.csv')
 
-# app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-#     html.H1(
-#         children='Hey guys, welkom bij Informatievisualisatie',
-#         style={
-#             'textAlign': 'center',
-#             'color': colors['text']
-#         }
-#     ),
-
-#     html.Div(children='Dash: A web application framework for Python.', style={
-#         'textAlign': 'center',
-#         'color': colors['text']
-#     }),
-
-#     dcc.Graph(
-#         id='example-graph-2',
-#         figure={
-#             'data': [
-#                 {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-#                 {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': 'Montréal'},
-#             ],
-#             'layout': {
-#                 'plot_bgcolor': colors['background'],
-#                 'paper_bgcolor': colors['background'],
-#                 'font': {
-#                     'color': colors['text']
-#                 }
-#             }
-#         }
-#     )
-
-# ])
 gltByCity = pd.read_csv('data/GlobalLandTemperaturesByCity.csv')
 gltByCountry = pd.read_csv('data/GlobalLandTemperaturesByCountry.csv')
 gltByMajorCity = pd.read_csv('data/GlobalLandTemperaturesByMajorCity.csv')
@@ -60,14 +30,59 @@ def generate_table(dataframe, max_rows=100):
         ]) for i in range(min(len(dataframe), max_rows))]
     )
 
+limits = [(0,2),(3,10),(11,20),(21,50),(50,3000)]
+colors = ["rgb(0,116,217)","rgb(255,65,54)","rgb(133,20,75)","rgb(255,133,27)","lightgrey"]
+cities = []
 
-app = dash.Dash()
+for i in range(len(limits)):
+    lim = limits[i]
+    gltByCity = gltByCity[lim[0]:lim[1]]
+    city = dict(
+        type = 'scattergeo',
+        locationmode = 'world',
+        lon = gltByCity['Longitude'],
+        lat = gltByCity['Latitude'],
+        text = gltByCity['City'],
+        marker = dict(
+            size = gltByCity['AverageTemperature'],
+            color = colors[i],
+            line = dict(width=0.5, color='rgb(40,40,40)'),
+            sizemode = 'area'
+        ),
+        name = '{0} - {1}'.format(lim[0],lim[1]) )
+    cities.append(city)
 
-app.layout = html.Div(children=[
-    html.H4(children='US Agriculture Exports (2011)'),
-    generate_table(gltByCity),
-    html.H1(len(gltByCity['City'].unique()))
-])
+layout = dict(
+        title = '2014 US city populations<br>(Click legend to toggle traces)',
+        showlegend = True,
+        geo = dict(
+            scope='world',
+            projection=dict( type='albers usa' ),
+            showland = True,
+            landcolor = 'rgb(217, 217, 217)',
+            subunitwidth=1,
+            countrywidth=1,
+            subunitcolor="rgb(255, 255, 255)",
+            countrycolor="rgb(255, 255, 255)"
+        ),
+    )
+
+fig = dict( data=cities, layout=layout )
+py.iplot( fig, validate=False, filename='d3-bubble-map-populations' )
+
+
+data = [fig]
+url_1 = py.plot(data, filename='scatter-for-dashboard', auto_open=False)
+py.iplot(data, filename='scatter-for-dashboard')
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
+
+# app.layout = html.Div(children=[
+#     html.H4(children='US Agriculture Exports (2011)'),
+#     generate_table(gltByState),
+#     html.H1(gltByState['State'].unique())
+# ])
+
+
+
