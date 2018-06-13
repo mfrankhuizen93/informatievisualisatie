@@ -12,28 +12,32 @@ def createBubblemap(df):
     print("--- %s seconds --- Started creating bubbleMap " % (time.time() - start_time))
 
     years = df['dt'].unique()
+    limits = [(41, 51), (31, 40), (21, 30), (11, 20), (1, 10), (-10, 0), (-20, -11), (-30, -21), (-40, -31), (-50, -41)]
+    colors = ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,144)','rgb(224,243,248)','rgb(171,217,233)','rgb(116,173,209)','rgb(69,117,180)','rgb(49,54,149)']
     temp = []
 
-    # S & W krijgen een '-' voor de getal
-    # df['Hoverinfo'] = df['City'] + '<br>Average temperature ' + (df['AverageTemperature']).astype(str)+' degrees'
+    for i in range(len(limits)):
+        lim = limits[i]
+        df_sub = df[(df['AverageTemperature'] > lim[0]) & (df['AverageTemperature'] < lim[1])]
 
-    a = dict(
-        type = 'scattergeo',
-        locationmode = 'world',
-        lon = df[ (df['dt'] == 2010)]['Longitude'],
-        lat = df[ (df['dt'] == 2010)]['Latitude'],
-        text = df[ (df['dt'] == 2010)]['City'] + '<br>Average temperature ' + (df[ (df['dt'] == 2010)]['AverageTemperature']).astype(str)+' degrees',
-        hoverinfo = 'text',
-        marker = dict(
-            size = 20,
-            color = df[ (df['dt'] == 2010)]['AverageTemperature'] * 10,
-            line = dict(width=0.5, color='rgb(40,40,40)'),
-            sizemode = 'area'
-        ), 
+        a = dict(
+            type = 'scattergeo',
+            locationmode = 'world',
+            lon = df_sub[ (df_sub['dt'] == 2010)]['Longitude'],
+            lat = df_sub[ (df_sub['dt'] == 2010)]['Latitude'],
+            text = df_sub[ (df_sub['dt'] == 2010)]['City'] + '<br>Average temperature ' + (df_sub[ (df_sub['dt'] == 2010)]['AverageTemperature']).astype(str)+' degrees',
+            hoverinfo = 'text',
+            marker = dict(
+                size = 15,
+                color = colors[i],
+                line = dict(width=0.0, color='rgb(40,40,40)'),
+                sizemode = 'area'
+            ), 
 
-        name = df[ (df['dt'] == 2010)]['City'] )
+            name = '{0} - {1}'.format( lim[1], lim[0])
+        )
 
-    temp.append(a)
+        temp.append(a)
 
     layout = dict(
             title = 'Titel hier',
@@ -41,11 +45,13 @@ def createBubblemap(df):
             geo = dict(
                 projection=dict( type='natural earth' ),
                 showland = True,
-                landcolor = 'rgb(240, 240, 240)',
+                landcolor = 'rgb(255, 255, 255)',
                 subunitwidth=1,
                 countrywidth=1,
-                subunitcolor="rgb(245, 245, 245)",
-                countrycolor="rgb(245, 245, 245)"
+                subunitcolor="rgb(255, 255, 255)",
+                countrycolor="rgb(255, 255, 255)",
+                showocean= True,
+                oceancolor = 'lightgrey'
             ),
         )
 
