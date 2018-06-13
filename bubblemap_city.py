@@ -14,6 +14,7 @@ def createBubblemap(df):
     years = df['dt'].unique()
     temp = []
 
+    # S & W krijgen een '-' voor de getal
     # df['Hoverinfo'] = df['City'] + '<br>Average temperature ' + (df['AverageTemperature']).astype(str)+' degrees'
 
     a = dict(
@@ -56,7 +57,7 @@ def getData():
     #     df = pd.read_csv('data/df.csv')
     #     print("--- %s seconds --- Getting optimized dataset " % (time.time() - start_time))
     # else:
-        # Reading the dataset and storing it
+    # Reading the dataset and storing it
     gltByCity = pd.read_csv('data/GlobalLandTemperaturesByCity.csv')
     print("--- %s seconds --- Read dataset" % (time.time() - start_time))
 
@@ -64,37 +65,28 @@ def getData():
     gltByCity = gltByCity.dropna()
     print("--- %s seconds --- Dropped empty rows" % (time.time() - start_time))
 
-    # Get all city names
-    cities = gltByCity['City'].unique();
-    print("--- %s seconds --- Got all city names" % (time.time() - start_time))
+    # Cast string to datetime
+    gltByCity['dt'] = pd.to_datetime(gltByCity['dt'], format='%Y-%m-%d')
+    print("--- %s seconds --- Converted dt to datetime" % (time.time() - start_time))
 
+    # Merge all monthly items to one year item
+    gltByCity = gltByCity.groupby(['City', 'Country', 'Longitude', 'Latitude', pd.Grouper(key='dt', freq='1Y')]).mean().reset_index()
 
+    print("--- %s seconds --- Grouped all by one year" % (time.time() - start_time))
 
-    years = list(range(2000, 2014))
+    # Remove all dates not in scope
+    years = list(range(1750, 2014))
+    gltByCity = gltByCity[pd.DatetimeIndex(gltByCity['dt']).year.isin(years)]
+    print("--- %s seconds --- Removed all dates not in scope" % (time.time() - start_time))
 
-    df = gltByCity.iloc[0:0]
+    # Remove month and day from full date 
+    gltByCity['dt'] = pd.DatetimeIndex(gltByCity['dt']).year
+    print("--- %s seconds --- Removed month and day from full date" % (time.time() - start_time))
 
-    for city in cities:
-        # for year in years:
-        year = 2010
-        print(city, year)
-        temp = gltByCity[ (gltByCity['City'] == city) & (gltByCity['dt'].str.startswith(str(year))) ]
-
-        if (temp.shape[0] > 0):
-            df = df.append(temp.iloc[0])
-            df.loc[df.index[-1], 'dt']= year
-            averageTemperature = temp['AverageTemperature'].mean()
-            uncertainty = temp['AverageTemperatureUncertainty'].mean()
-            df.loc[df.index[-1], 'AverageTemperature']= averageTemperature
-            df.loc[df.index[-1], 'AverageTemperatureUncertainty']= uncertainty
-
-            df.to_csv('data/df.csv')
-            print("--- {} seconds --- Added {} to csv".format(time.time() - start_time, city))
-
-    print("--- %s seconds --- Casted dataset to dictionary" % (time.time() - start_time))
+    df = gltByCity
     df.to_csv('data/df.csv')
 
-    createBubblemap(df)
+    # createBubblemap(df)
 
 if __name__ == '__main__':
     getData()
