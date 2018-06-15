@@ -133,5 +133,7 @@ Temporary Items
 .apdisk
 
 #Specific ignore for this project
+*.csv
 .csv
 .html
+*.html
