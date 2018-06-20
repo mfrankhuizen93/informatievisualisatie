@@ -11,7 +11,6 @@ import bubblemap as bm
 app = dash.Dash()
 
 data = bm.getData();
-# fig = bm.getFigure(data, 2010)
 
 app.layout  = html.Div([
 
