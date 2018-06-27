@@ -15,8 +15,6 @@ def getGlobalDataByDateRange(co2, start = 1960, end = 2016):
 
     co2goal = float((co2[co2['Year'] == 1990]['Global']) / 2)
 
-    print(co2goal)
-
     traceCO2 = go.Scatter(
                         x=x,
                         y=co2['Global'],
@@ -55,26 +53,7 @@ def createScatter(co2, start = 1960, end = 2016):
     fig = getFigure(co2, start, end)
     plot(fig, filename='climate_change_scatter-and-line.html')
 
-def getGlobalData():
-    print("--- %s seconds --- Getting global data for scatterplot with fitted line" % (time.time() - start_time))
-    if os.path.isfile('data/df_global2.csv'):
-        df = pd.read_csv('data/df_global.csv')
-    else:
-        df = pd.read_csv('data/GlobalTemperatures.csv')
-        df = df.dropna()
-        df['dt'] = pd.to_datetime(df['dt'], format='%Y-%m-%d')
-
-        df = df.groupby([pd.Grouper(key='dt', freq='1Y')]).mean().reset_index()
-
-        years = list(range(1960, 2016))
-        df = df[pd.DatetimeIndex(df['dt']).year.isin(years)]
-
-        # Remove month and day from full date 
-        df['dt'] = pd.DatetimeIndex(df['dt']).year
-        df.to_csv('data/df_global.csv')
-    return df
-
-def getCO2Data():
+def getData():
     print("--- %s seconds --- Getting CO2 emmission" % (time.time() - start_time))
     df = pd.read_csv('data/carbon/GlobalCarbonAtlas_territorial.csv', header=1)
     columns = list(df)[1:]
@@ -87,6 +66,6 @@ if __name__ == '__main__':
     start = 1960
     end = 2016
 
-    co2 = getCO2Data()
+    co2 = getData()
 
     createScatter(co2, start, end)

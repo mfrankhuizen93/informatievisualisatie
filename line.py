@@ -127,7 +127,7 @@ def getGlobalDataByDateRange(df, country, start = 1750, end = 2015):
                       y=[maxAllowed[0]] * len(x),
                       line = dict(
                         color = ('rgb(205, 12, 24)'),
-                        width = 4,
+                        width = 2,
                         dash = 'dot'),
                     name='Maximum allowed temperature'
                       )
