@@ -27,6 +27,8 @@ Voor het runnen van de visualisatie is een aantal libraries nodig:
 
 ## Data
 Ook moet de data ingeladen worden in de map "data". De datasets zijn hier te downloaden:
-**[ZET HIER LINKJES NEER]**
+Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
+Land temperatures by city dataset: https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb
+Global land temperatures dataset: https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q
 
 **Let op**: de namen van de datasets moeten hetzelfde blijven. 
