@@ -1,14 +1,13 @@
 # Informatievisualisatie
-UvA Informatiekunde - Informatievisualisatie Project - juni 2018
-Michelle Frankhuizen - 10365354
-Ossip Kupperman - 11013583
-Laura Hilhorst - 11048999
-
+UvA Informatiekunde - Informatievisualisatie Project - juni 2018  
+Michelle Frankhuizen - 10365354  
+Ossip Kupperman - 11013583  
+Laura Hilhorst - 11048999  
 
 ## Doel van de visualisatie
-Het doel van deze visualisatie is om de gebruiker een inzicht te tonen in het verloop van global warming sinds de Industriële Revolutie en de waarden te toetsen aan de afspraken gemaakt in het Klimaatakkoord van Parijs in 2015. De twee hoofdafspraken van dit akkoord luiden als volgt:
+Het doel van deze visualisatie is om de gebruiker een inzicht te tonen in het verloop van global warming sinds de Industriële Revolutie en de waarden te toetsen aan de afspraken gemaakt in het Klimaatakkoord van Parijs in 2015. De twee hoofdafspraken van dit akkoord luiden als volgt:  
 
-1. De gemiddelde temperatuur van de hele aarde mag niet meer dan 2 graden Celsius opwarmen ten opzichte van de "pre-industriële" temperatuur. 1850 is hier de benchmark. Dit jaar wordt in de meeste berekeningen gebruikt als de pre-industriële temperatuur omdat men pas vanaf dat jaar betrouwbare temperatuurmetingen is gaan doen. 
+1. De gemiddelde temperatuur van de hele aarde mag niet meer dan 2 graden Celsius opwarmen ten opzichte van de "pre-industriële" temperatuur. 1850 is hier de benchmark. Dit jaar wordt in de meeste berekeningen gebruikt als de pre-industriële temperatuur omdat men pas vanaf dat jaar betrouwbare temperatuurmetingen is gaan doen.
 
 2. De globale uitstoot van broeikasgassen moet minder dan de helft van de uitstoot in 1990 worden. Hier zijn pas metingen over sinds 1960, dus de visualisatie is ook pas vanaf daar beschikbaar.
 
@@ -26,9 +25,8 @@ Voor het runnen van de visualisatie is een aantal libraries nodig:
 - scipy
 
 ## Data
-Ook moet de data ingeladen worden in de map "data". De datasets zijn hier te downloaden:
-Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
-Land temperatures by city dataset: https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb
-Global land temperatures dataset: https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q
+- Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
+- Land temperatures by city dataset: https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb
+- Global land temperatures dataset: https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q
 
 **Let op**: de namen van de datasets moeten hetzelfde blijven. 
