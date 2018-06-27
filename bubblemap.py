@@ -42,8 +42,10 @@ def getFigure(df, year = 1750):
     layout = dict(
         title = 'Earth Surface Temperature in ' + str(year),
         showlegend = True,
+        height = 500,
         geo = dict(
             projection=dict( type='natural earth' ),
+            resolution='50',
             showland = True,
             landcolor = 'rgb(65, 174, 118)',
             subunitwidth=1,
