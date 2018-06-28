@@ -42,8 +42,8 @@ Plaats de datasets in een map 'data', zodat de folderstructuur er als volgt uitz
 .
 ├── data
 │   ├── GlobalCarbonAtlas_territorial.csv
-│   └── GlobalLandTemperaturesByCity.csv
-│   └── GlobalLandTemperaturesByCountry.csv
+│   ├── GlobalLandTemperaturesByCity.csv
+│   ├── GlobalLandTemperaturesByCountry.csv
 │   └── GlobalTemperatures.csv
 ├── license.md
 ├── README.md
