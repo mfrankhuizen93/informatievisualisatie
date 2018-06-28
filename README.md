@@ -26,9 +26,10 @@ Voor het runnen van de visualisatie is een aantal libraries nodig:
 ``` scipy ```
 
 ## Data
-- Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
-- Land temperatures by city dataset: https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb
-- Global land temperatures dataset: https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q
+De volgende datasets zijn benodigd
+- [https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N](Global emissions dataset) 
+- [https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb](Land temperatures by city dataset) 
+- [https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q](Global land temperatures dataset)
 
 **Let op**: de namen van de datasets moeten hetzelfde blijven. 
 
@@ -55,4 +56,4 @@ Navigeer in een browser naar keuze naar:
 | Laura Hilhorst         | 11048999        | Informatiekunde     |
 
 ## License
-Dit project is gelicenseerd onder de MIT License. Zie LICENSE.md voor meer details
+Dit project is gelicenseerd onder de MIT License. Zie [license.md](license.md) voor details
