@@ -27,9 +27,9 @@ Voor het runnen van de visualisatie is een aantal libraries nodig:
 
 ## Data
 De volgende datasets zijn benodigd
-- [https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N](Global emissions dataset) 
-- [https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb](Land temperatures by city dataset) 
-- [https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q](Global land temperatures dataset)
+- [Global emissions](https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N) 
+- [Land temperatures by city](https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb)
+- [Global temperatures](https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q)
 
 **Let op**: de namen van de datasets moeten hetzelfde blijven. 
 
