@@ -55,7 +55,7 @@ def createScatter(co2, start = 1960, end = 2016):
 
 def getData():
     print("--- %s seconds --- Getting CO2 emmission" % (time.time() - start_time))
-    df = pd.read_csv('data/carbon/GlobalCarbonAtlas_territorial.csv', header=1)
+    df = pd.read_csv('data/GlobalCarbonAtlas_territorial.csv', header=1)
     columns = list(df)[1:]
     df['Global'] = df[columns].mean(axis=1)
     return df
