@@ -16,10 +16,14 @@ Het gebruik van het dashboard is simpel: het enige dat de gebruiker hoeft te doe
 
 ##  Dependencies
 Voor het runnen van de visualisatie is een aantal libraries nodig:
-'''plotly '''
-'''pandas'''
-'''numpy'''
-'''scipy'''
+
+``` plotly ```
+
+``` pandas ```
+
+``` numpy ```
+
+``` scipy ```
 
 ## Data
 - Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
@@ -30,7 +34,17 @@ Voor het runnen van de visualisatie is een aantal libraries nodig:
 
 ## Uitvoering
 
-''' python app.py '''
+Download de vier datasets
+
+Plaats de datasets in de map 'data'
+
+Navigeer naar de repo in Terminal en run:
+
+```python app.py```
+
+Navigeer in een browser naar keuze naar:
+
+``` http://127.0.0.1:8050/ ```
 
 
 ## Auteurs
