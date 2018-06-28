@@ -1,10 +1,12 @@
 # Informatievisualisatie
 UvA Informatiekunde Informatievisualisatie Project - juni 2018  
-| Naam                  | Studentnummer | Studie             |
-|-----------------------|---------------|--------------------|
-| Michelle Frankhuizen  | 10365354      | Informatica        |
-| Ossip Kupperman       |11013583       | Informatiekunde    |
-| Laura Hilhorst        | 11048999      | Informatiekunde    |
+
+
+| Naam                   | Studentnummer   | Studie              |
+|----------------------- | --------------- | --------------------|
+| Michelle Frankhuizen   | 10365354        | Informatica         |
+| Ossip Kupperman        | 11013583        | Informatiekunde     |
+| Laura Hilhorst         | 11048999        | Informatiekunde     |
 
 ## Doel van de visualisatie
 Het doel van deze visualisatie is om de gebruiker een inzicht te tonen in het verloop van global warming sinds de Industriële Revolutie en de waarden te toetsen aan de afspraken gemaakt in het Klimaatakkoord van Parijs in 2015. De twee hoofdafspraken van dit akkoord luiden als volgt:  
