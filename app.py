@@ -36,7 +36,7 @@ app.layout  = html.Div([
     ], style={'margin-left': '300px', 'margin-right': '300px', 'height': '50px'}),
 
     html.Div([
-        dcc.Graph(id='bubblemap', animate=True),
+        dcc.Graph(id='bubblemap'),
     ], style={'width': '80%', 'display': 'inline-block'}),
 
     html.Div([
