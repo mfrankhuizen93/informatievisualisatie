@@ -1,7 +1,7 @@
 # Informatievisualisatie
-UvA Informatiekunde Informatievisualisatie Project - juni 2018  
 
 
+| UvA Informatiekunde Informatievisualisatie Project - juni 2018  | 
 | Naam                   | Studentnummer   | Studie              |
 |----------------------- | --------------- | --------------------|
 | Michelle Frankhuizen   | 10365354        | Informatica         |
