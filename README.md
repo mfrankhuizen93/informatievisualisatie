@@ -45,12 +45,12 @@ Plaats de datasets in een map 'data', zodat de folderstructuur er als volgt uitz
 │   └── GlobalLandTemperaturesByCity.csv
 │   └── GlobalLandTemperaturesByCountry.csv
 │   └── GlobalTemperatures.csv
-├── [license.md](license.md)
-├── [README.md](README.md)
-├── [app.py](app.py)
-├── [bubblemap.py](bubblemap.py)
-├── [co2.py](co2.py)
-└── [line.py](line.py)
+├── license.md
+├── README.md
+├── app.py
+├── bubblemap.py
+├── co2.py
+└── line.py
 1 directory, 10 files
 
 ```
