@@ -37,8 +37,23 @@ De volgende datasets zijn benodigd
 
 Download de vier datasets
 
-Plaats de datasets in de map 'data'
+Plaats de datasets in een map 'data', zodat de folderstructuur er als volgt uitziet
+```
+.
+├── data
+│   ├── GlobalCarbonAtlas_territorial.csv
+│   └── GlobalLandTemperaturesByCity.csv
+│   └── GlobalLandTemperaturesByCountry.csv
+│   └── GlobalTemperatures.csv
+├── [license.md](license.md)
+├── [README.md](README.md)
+├── [app.py](app.py)
+├── [bubblemap.py](bubblemap.py)
+├── [co2.py](co2.py)
+└── [line.py](line.py)
+1 directory, 10 files
 
+```
 Navigeer naar de repo in Terminal en run:
 
 ```python app.py```
