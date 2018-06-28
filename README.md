@@ -1,8 +1,5 @@
 # Informatievisualisatie
-UvA Informatiekunde - Informatievisualisatie Project - juni 2018  
-Michelle Frankhuizen - 10365354  
-Ossip Kupperman - 11013583  
-Laura Hilhorst - 11048999  
+UvA Informatiekunde Informatievisualisatie Project - juni 2018
 
 ## Doel van de visualisatie
 Het doel van deze visualisatie is om de gebruiker een inzicht te tonen in het verloop van global warming sinds de Industriële Revolutie en de waarden te toetsen aan de afspraken gemaakt in het Klimaatakkoord van Parijs in 2015. De twee hoofdafspraken van dit akkoord luiden als volgt:  
@@ -19,14 +16,44 @@ Het gebruik van het dashboard is simpel: het enige dat de gebruiker hoeft te doe
 
 ##  Dependencies
 Voor het runnen van de visualisatie is een aantal libraries nodig:
-- plotly 
-- pandas 
-- numpy
-- scipy
+
+``` plotly ```
+
+``` pandas ```
+
+``` numpy ```
+
+``` scipy ```
 
 ## Data
-- Global emissions dataset: https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N
-- Land temperatures by city dataset: https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb
-- Global land temperatures dataset: https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q
+De volgende datasets zijn benodigd
+- [Global emissions](https://drive.google.com/open?id=1DE0RoYx-XKpALXNaPE-wnrEnvHhNVI1N) 
+- [Land temperatures by city](https://drive.google.com/open?id=11PvWsnvA14jVF7TyJPUlqYYnBoGtXffb)
+- [Global temperatures](https://drive.google.com/open?id=12_sKTg0ciAlRS9YZRN0ZA8fiMrx8OD_Q)
 
 **Let op**: de namen van de datasets moeten hetzelfde blijven. 
+
+## Uitvoering
+
+Download de vier datasets
+
+Plaats de datasets in de map 'data'
+
+Navigeer naar de repo in Terminal en run:
+
+```python app.py```
+
+Navigeer in een browser naar keuze naar:
+
+``` http://127.0.0.1:8050/ ```
+
+
+## Auteurs
+| Naam                   | Studentnummer   | Studie              |
+|----------------------- | --------------- | --------------------|
+| Michelle Frankhuizen   | 10365354        | Informatica         |
+| Ossip Kupperman        | 11013583        | Informatiekunde     |
+| Laura Hilhorst         | 11048999        | Informatiekunde     |
+
+## License
+Dit project is gelicenseerd onder de MIT License. Zie [license.md](license.md) voor details
