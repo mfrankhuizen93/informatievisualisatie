@@ -49,11 +49,13 @@ Plaats de datasets in een map 'data', zodat de folderstructuur er als volgt uitz
 │   └── GlobalTemperatures.csv
 ├── license.md
 ├── README.md
+├── Projectverslag.pdf
+├── Projectpresentatie.pdf
 ├── app.py
 ├── bubblemap.py
 ├── co2.py
 └── line.py
-1 directory, 10 files
+1 directory, 12 files
 
 ```
 Navigeer naar de repo in Terminal en run:
